@@ -28,6 +28,8 @@ jobs:
         api_key: $GITHUB_OAUTH_TOKEN
         file: "build/libs/pal-tracker.jar"
         skip_cleanup: true
+        on:
+          branch: migration-lab
     - stage: deploy to review
       language: java
       before_install:
@@ -52,3 +54,5 @@ jobs:
         password: $CF_PASSWORD
         organization: $CF_ORG
         space: review
+        on:
+          branch: migration-lab
